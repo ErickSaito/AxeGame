@@ -1,14 +1,35 @@
 #include "raylib.h"
 int main() 
 {
-  int screenWidth = 350;
-  // Code here
-  InitWindow(screenWidth, 200, "Axe Game");
+  // windown dimensions
+  int screenWidth{350};
+  int screenHeight{200};
+  InitWindow(screenWidth, screenHeight, "Axe Game");
 
-  while(!WindowShouldClose()) {
+  // circle coordinates
+  int circleX{175};
+  int circleY{100};
+
+  SetTargetFPS(60);
+
+  while(!WindowShouldClose()) 
+  {
     BeginDrawing(); // Start Canvas
     ClearBackground(WHITE);
-    DrawCircle(175, 100, 25, BLUE);
+
+    // Game logic begins
+    DrawCircle(circleX, circleY, 25, BLUE);
+
+    if (IsKeyDown(KEY_D) && circleX < screenWidth)
+    {
+      circleX += 2;
+    }
+
+    if (IsKeyDown(KEY_A) && circleX > 0)
+    {
+      circleX -= 2;
+    }
+
     EndDrawing(); // End Canvas
   }
   return 0;
