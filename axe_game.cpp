@@ -1,7 +1,14 @@
 #include "raylib.h"
 int main() 
 {
-    // Code here
-    InitWindow(350, 200, "Axe Game");
-    return 0;
+  int screenWidth = 350;
+  // Code here
+  InitWindow(screenWidth, 200, "Axe Game");
+
+  while(true) {
+    BeginDrawing(); // Start Canvas
+    ClearBackground(RED);
+    EndDrawing(); // End Canvas
+  }
+  return 0;
 }
