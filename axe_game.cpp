@@ -5,7 +5,7 @@ int main()
   // Code here
   InitWindow(screenWidth, 200, "Axe Game");
 
-  while(true) {
+  while(!WindowShouldClose()) {
     BeginDrawing(); // Start Canvas
     ClearBackground(RED);
     EndDrawing(); // End Canvas
