@@ -2,13 +2,17 @@
 int main() 
 {
   // windown dimensions
-  int screenWidth{350};
-  int screenHeight{200};
+  int screenWidth{800};
+  int screenHeight{450};
   InitWindow(screenWidth, screenHeight, "Axe Game");
 
   // circle coordinates
-  int circleX{175};
-  int circleY{100};
+  int circleX{200};
+  int circleY{200};
+
+  // axe coordinates
+  int axeX{400};
+  int axeY{0};
 
   SetTargetFPS(60);
 
@@ -19,6 +23,10 @@ int main()
 
     // Game logic begins
     DrawCircle(circleX, circleY, 25, BLUE);
+    DrawRectangle(axeX, axeY, 50, 50, RED);
+
+    // move the axe
+    axeY += 2;
 
     if (IsKeyDown(KEY_D) && circleX < screenWidth)
     {
